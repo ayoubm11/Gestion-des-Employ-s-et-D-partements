@@ -1,109 +1,134 @@
-# Gestion des employés et départements
+# Gestion des Employés et Départements OCP
 
-Auteur : Ayoub MOURADI
+Ce projet est une application web complète pour la gestion des employés et des départements, développée avec Spring Boot pour le backend et Angular pour le frontend.
 
-Résumé
-------
-Ce dépôt contient une application complète pour la gestion des employés et des départements. Le projet est composé d'un backend Java (Spring Boot) et d'un frontend développé en Angular. Ce fichier README fournit une vue d'ensemble du projet, les instructions pour lancer l'application, les technologies utilisées, ainsi que les emplacements des images et animations utilisées pour la documentation et l'interface.
+## 🚀 Fonctionnalités
 
-Contenu clé
------------
-- Backend : dossier principal Java (Spring Boot) disponible dans le répertoire racine (`src/main/java/...`).
-- Frontend : `OCP-Gestion-des-employes-et-Departement_FrontEnd` (Angular 12)
-- Documentation visuelle / captures et animations :
-  - `assest/1.png` → image pour la section Employés
-  - `assest/2.png` → image pour la section Départements
-  - `OCP-Gestion-des-employes-et-Departement_FrontEnd/PhReadme/` → captures supplémentaires (4 images : `1.png` à `4.png`)
+- Gestion complète des employés (CRUD)
+- Gestion des départements (CRUD)
+- Interface utilisateur intuitive
+- Système de navigation réactif
+- Architecture modulaire
 
-Fonctionnalités principales
--------------------------
-- Gestion CRUD des employés (ajout, modification, suppression, liste)
-- Gestion CRUD des départements
-- Pagination des listes (via `ngx-pagination` dans le frontend)
-- Interface utilisateur responsive avec Bootstrap
+## �️ Captures d'écran de l'Application
 
-Technologies utilisées
-----------------------
-- Backend : Java, Spring Boot
-- Frontend : Angular 12, TypeScript, RxJS
-- UI : Bootstrap 5, Font Awesome
-- Outils / Tests : Angular CLI, Karma, Jasmine
+### Interface de Gestion des Employés
+![Interface de Gestion des Employés](assest/1.png)
 
-Prérequis
----------
-- Java JDK 11+ (pour le backend)
-- Maven (pour construire le backend)
-- Node.js (v12 ou v14 recommandé) et npm (pour le frontend)
-- Angular CLI (optionnel)
+### Interface de Gestion des Départements
+![Interface de Gestion des Départements](assest/2.png)
 
-Installation et exécution (rapide)
---------------------------------
-1) Backend (Spring Boot)
+## �🛠 Technologies Utilisées
 
-	- Depuis la racine du projet où se trouve le `pom.xml` :
+### Backend
+- Java 11+
+- Spring Boot
+- Spring Data JPA
+- Spring Web
+- Base de données (configurée dans application.properties)
+- Maven pour la gestion des dépendances
 
-```powershell
-mvnw.cmd spring-boot:run
-# ou si Maven est installé globalement
-mvn spring-boot:run
+### Frontend
+- Angular 14+
+- TypeScript
+- Bootstrap pour le style
+- Services HTTP pour la communication avec l'API
+- Routing Angular pour la navigation
+
+## 📦 Structure du Projet
+
+```
+OcpPfe/
+├── OCP-Gestion-des-employes-et-Departement/     # Backend
+│   ├── src/
+│   │   ├── main/java/com/ecom/ocppfe/
+│   │   └── resources/
+│   └── pom.xml
+│
+└── OCP-Gestion-des-employes-et-Departement_FrontEnd/    # Frontend
+    ├── src/
+    │   ├── app/
+    │   │   ├── pages/
+    │   │   ├── services/
+    │   │   └── shared/
+    │   └── assets/
+    └── package.json
 ```
 
-	L'API tourne par défaut sur `http://localhost:8080` (selon la configuration dans `application.properties`).
+## 🚀 Installation et Démarrage
 
-2) Frontend (Angular)
+### Backend (Spring Boot)
 
-	- Ouvrez un terminal dans `OCP-Gestion-des-employes-et-Departement_FrontEnd` :
+1. Naviguer vers le dossier backend :
+```bash
+cd OCP-Gestion-des-employes-et-Departement
+```
 
-```powershell
+2. Installer les dépendances et compiler :
+```bash
+./mvnw clean install
+```
+
+3. Lancer l'application :
+```bash
+./mvnw spring-boot:run
+```
+
+Le serveur démarre sur `http://localhost:8080`
+
+### Frontend (Angular)
+
+1. Naviguer vers le dossier frontend :
+```bash
 cd OCP-Gestion-des-employes-et-Departement_FrontEnd
-npm install
-npm start
 ```
 
-	- Le frontend s'exécute en dev sur `http://localhost:4200` par défaut.
+2. Installer les dépendances :
+```bash
+npm install
+```
 
-Remarques :
-- Si le backend écoute sur un port différent, mettez à jour l'URL de l'API dans le service Angular (`src/app/services/*`) ou dans `environment.ts`.
+3. Lancer l'application :
+```bash
+ng serve
+```
 
-Assets (images et animations)
-----------------------------
-Les images que vous m'avez indiquées sont stockées sous `assest` à la racine du workspace :
+L'application est accessible sur `http://localhost:4200`
 
-- `assest/1.png` — image principale pour les employés
-- `assest/2.png` — image principale pour les départements
+## 📚 Documentation API
 
-Exemples d'inclusion dans ce README :
+L'API REST expose les endpoints suivants :
 
-![Employés](./assest/1.png)
-![Départements](./assest/2.png)
+### Employés
+- GET /api/employees - Liste tous les employés
+- GET /api/employees/{id} - Détails d'un employé
+- POST /api/employees - Créer un employé
+- PUT /api/employees/{id} - Modifier un employé
+- DELETE /api/employees/{id} - Supprimer un employé
 
-Images supplémentaires et animations
-- Le dossier `OCP-Gestion-des-employes-et-Departement_FrontEnd/PhReadme` contient 4 captures/animations (`1.png` à `4.png`) que j'ai ajoutées pour la documentation du frontend. Vous pouvez les afficher depuis ce README (chemin relatif) si vous le souhaitez :
+### Départements
+- GET /api/departments - Liste tous les départements
+- GET /api/departments/{id} - Détails d'un département
+- POST /api/departments - Créer un département
+- PUT /api/departments/{id} - Modifier un département
+- DELETE /api/departments/{id} - Supprimer un département
 
-![Frontend Capture 1](./OCP-Gestion-des-employes-et-Departement_FrontEnd/PhReadme/1.png)
-![Frontend Capture 2](./OCP-Gestion-des-employes-et-Departement_FrontEnd/PhReadme/2.png)
+## 👥 Contribution
 
-Conseils pour les animations
----------------------------
-- Préférez les formats GIF ou MP4 pour les animations. Gardez une image PNG en fallback si nécessaire.
-- Placez les animations destinées à l'application dans `OCP-Gestion-des-employes-et-Departement_FrontEnd/src/assets/animations/` et référencez-les depuis vos composants via `assets/animations/nom.gif`.
+Les contributions sont les bienvenues ! N'hésitez pas à :
 
-Modifications déjà effectuées
------------------------------
-- J'ai ajouté un README spécifique au frontend dans `OCP-Gestion-des-employes-et-Departement_FrontEnd/PhReadme/README.md` contenant les captures et recommandations.
-- J'ai ajouté un fichier de licence nommé `LICENSE` (variante MTM basée sur MIT) à la racine du dépôt.
+1. Fork le projet
+2. Créer une branche pour votre fonctionnalité
+3. Commiter vos changements
+4. Pousser vers la branche
+5. Ouvrir une Pull Request
 
-Licence
--------
-Ce projet est distribué sous la licence **MTM** (fichier `LICENSE` à la racine). Le texte de la licence est basé sur la licence MIT mais renommé MTM selon votre demande. Voir `LICENSE` pour le texte complet.
+## 📝 Licence
 
-Contact
--------
-Pour toute question, modification ou exportation vers un autre format de documentation :
+Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
-Ayoub MOURADI
+## 📧 Contact
 
----
+Ayoub MOURADI - [Github](https://github.com/ayoubm11)
 
-Si vous souhaitez que j'ajoute d'autres animations (GIF/MP4) directement dans `assest` ou que j'intègre les images du frontend dans d'autres sections du README, dites-moi les fichiers à utiliser et je mets à jour ce fichier.
-
+Lien du projet : [https://github.com/ayoubm11/Gestion-des-Employ-s-et-D-partements](https://github.com/ayoubm11/Gestion-des-Employ-s-et-D-partements)
