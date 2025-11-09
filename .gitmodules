@@ -1,0 +1,6 @@
+[submodule "OCP-Gestion-des-employes-et-Departement_FrontEnd"]
+	path = OCP-Gestion-des-employes-et-Departement_FrontEnd
+	url = https://github.com/ayoubm11/OCP-Gestion-des-employes-et-Departement_FrontEnd.git
+[submodule "OCP-Gestion-des-employes-et-Departement"]
+	path = OCP-Gestion-des-employes-et-Departement
+	url = https://github.com/ayoubm11/OCP-Gestion-des-employes-et-Departement.git
